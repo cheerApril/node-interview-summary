@@ -33,7 +33,12 @@
 <br> -------13. 为数据库字段增加comment是一个很好的习惯.
 <br> -------13. 字段名字不要用驼峰命名法. 推荐使用create_time
  
-<br> -------Mysql搜索引擎
+<br> -------Mysql搜索引擎(mysql 8.0文档)
+<br> ----Key Advantages of InnoDB
+<br> Its  DML operations follow the ACID model, with transactions featuring commit, rollback, and crash-recovery capabilities to protect user data. (事务)
+<br> Row-level locking and Oracle-style consistent reads increase multi-user concurrency and performance. (行锁)
+<br> InnoDB tables arrange your data on disk to optimize queries based on primary keys. Each InnoDB table has a primary key index called the clustered index that organizes the data to minimize I/O for primary key lookups. (主键的复合索引减少I/O 并且加快查询)  
+<br> To maintain data integrity, InnoDB supports FOREIGN KEY constraints. With foreign keys, inserts, updates, and deletes are checked to ensure they do not result in inconsistencies across different tables. (支持外键)
 
 <br> -------git常用命令
 
