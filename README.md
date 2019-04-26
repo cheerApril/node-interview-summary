@@ -32,13 +32,28 @@
 <br> -------12.【推荐】如果修改字段含义或对字段表示的状态追加时，需要及时更新字段注释。(这是一个很好的习惯)
 <br> -------13. 为数据库字段增加comment是一个很好的习惯.
 <br> -------13. 字段名字不要用驼峰命名法. 推荐使用create_time
- 
+<br> -------14. 引用外键如果是索引的话,可以提高性能.
+
 <br> -------Mysql搜索引擎(mysql 8.0文档)
-<br> ----Key Advantages of InnoDB
+<br> ---- Key Advantages of InnoDB
 <br> Its  DML operations follow the ACID model, with transactions featuring commit, rollback, and crash-recovery capabilities to protect user data. (事务)
 <br> Row-level locking and Oracle-style consistent reads increase multi-user concurrency and performance. (行锁)
 <br> InnoDB tables arrange your data on disk to optimize queries based on primary keys. Each InnoDB table has a primary key index called the clustered index that organizes the data to minimize I/O for primary key lookups. (主键的复合索引减少I/O 并且加快查询)  
 <br> To maintain data integrity, InnoDB supports FOREIGN KEY constraints. With foreign keys, inserts, updates, and deletes are checked to ensure they do not result in inconsistencies across different tables. (支持外键)
+<br> ---- Best Practices for InnoDB Tables innorDB 最佳的使用方式
+<br> ---- Specifying a primary key for every table using the most frequently queried column or columns, or an auto-increment value if there is no obvious primary key.(指定主键而且主键经常作为索引,自建主键)
+<br> ---InnoDB内存中结构 这个有点给力
+<br> --- innoDB  锁跟事务模型
+<br>This section describes lock types used by InnoDB.
+<br>Shared and Exclusive Locks 共享跟执行锁(row lock 行锁)
+<br>Intention Locks 意图锁 （table lock 表锁）
+<br>Record Locks (A record lock is a lock on an index record )
+<br>Gap Locks 间隙锁
+<br>Next-Key Locks
+<br>Insert Intention Locks
+<br>AUTO-INC Locks
+<br>Predicate Locks for Spatial Indexes
+
 
 <br> -------git常用命令
 
